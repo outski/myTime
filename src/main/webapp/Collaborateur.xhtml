@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+<h:head>
+	<ui:insert name="header" >
+			  <ui:include src="/WEB-INF/template.xhtml" />
+		</ui:insert>
+</h:head>
+<h:body>
+	
+<br></br>
+	<h:form>
+	
+		<table>
+		
+			<tr>
+				<td><label>Matricule</label></td>
+				<td><p:inputText id="matricule" value="#{collaborateur.matricule}"></p:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Mot de passe</label></td>
+				<td><p:inputText id="mdp" value="#{collaborateur.mdp}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Nom</label></td>
+				<td><p:inputText id="nom" value="#{collaborateur.nom}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Prenom</label></td>
+				<td><p:inputText id="prenom" value="#{collaborateur.prenom}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Email</label></td>
+				<td>
+				<p:inputText type="email" id="email" value="#{collaborateur.email}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Role</label></td>
+				<td><p:inputText id="role" value="#{collaborateur.role}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Statut</label></td>
+				<td><p:inputText id="statut" value="#{collaborateur.statut}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Etat</label></td>
+				<td><p:inputText id="etat" value="#{collaborateur.etat}"></p:inputText>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><label>Date Création</label></td>
+				<td><p:calendar id="dateCreation" value="#{collaborateur.dateCreation}"  pattern="MM/dd/yyyy HH:mm:ss"></p:calendar>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td colspan="2"><p:commandButton
+						action="#{pointageservice.addCollaborateur(collaborateur)}" value="Add Collaborateur"></p:commandButton>
+				</td>
+			</tr>
+			
+		</table>
+
+	</h:form>
+	<br></br>
+
+</h:body>
+</html>

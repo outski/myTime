@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+  <link rel="stylesheet" href="../css/bootstrap.min.css"></link>
+</h:head>
+<h:body>
+<div class="layout-wrapper">
+        <div class="layout-content">
+            <ui:insert name="content"></ui:insert>
+        </div>
+
+   </div>
+ <div>
+<h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+        <p:submenu  class="dropdown-submenu" label="Pointage" icon="pi pi-file">
+            <p:menuitem  value="Consulter Pointage" url="ListePointage.xhtml"/>
+            <p:menuitem value="Ajouter Pointage" url="AddRowPointage.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="Collaborateur" icon="pi pi-pencil">
+            <p:menuitem value="List Collaborateur" url="ListCollaborateur.xhtml" />
+            <p:menuitem value="Créer Collaborateur" url="Collaborateur.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="Affaire" icon="pi pi-pencil">
+            <p:menuitem value="Créer Affaire" url="Affaire.xhtml" />
+            <p:menuitem value="Désactiver Affaire" url="ListAffaire.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="Actions" icon="pi pi-cog">
+            <p:submenu label="Ajax" icon="pi pi-refresh">
+                <p:menuitem value="Save" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
+                <p:menuitem value="Update" action="#{menuView.update}" icon="pi pi-refresh" update="messages"/>
+            </p:submenu>
+            <p:submenu label="Non-Ajax" icon="pi pi-clone">
+                <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
+            </p:submenu>
+        </p:submenu>
+ 
+        <f:facet name="options">
+            <p:commandButton type="button" value="Logout" icon="pi pi-home" />
+        </f:facet>
+    </p:menubar>
+</h:form>
+</div>
+</h:body>
+</html>
